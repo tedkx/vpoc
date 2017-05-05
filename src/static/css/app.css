@@ -1,0 +1,27 @@
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+.fade-scale.in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal.fade .modal-dialog.custom-modal {
+    transform: scale(0.5);
+    opacity: 0;
+    -webkit-transition: all .25s cubic-bezier(0.23, 0, 0.32, 0);
+    -o-transition: all .25s cubic-bezier(0.23, 0, 0.32, 0);
+    transition: all .25s cubic-bezier(0.23, 0, 0.32, 0);
+}
+.modal.fade.in .modal-dialog.custom-modal {
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: all .25s cubic-bezier(0.23, 1, 0.32, 1);
+    -o-transition: all .25s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all .25s cubic-bezier(0.23, 1, 0.32, 1);
+}

@@ -66,5 +66,5 @@ export const myAuctions = generateAuctions(12);
 export const auctions = generateAuctions();
 
 export const generateBidsFor = (auction) => {
-    var 
+    
 }

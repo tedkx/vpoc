@@ -6,6 +6,7 @@ const html = `<!DOCTYPE html>
 <html>
     <head>
         <title>VDFM Project X</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     </head>
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">

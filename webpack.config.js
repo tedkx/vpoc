@@ -23,6 +23,7 @@ module.exports = {
             './src/static/css/theme.components.min.css',
             './src/static/css/theme.layout.min.css',
             './src/static/css/theme.darkblue.min.css',
+            './src/static/css/theme.pricing.min.css',
             './src/static/css/ag-grid-theme.css',
             './src/static/css/app.css',
             'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'

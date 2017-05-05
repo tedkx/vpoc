@@ -9,12 +9,13 @@ const html = `<!DOCTYPE html>
 <html>
     <head>
         <title>VDFM Project X</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     </head>
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
         <div id="app-wrap"></div>
 
-        ` + Object.keys(config.entry).map((key) => `<script src="dist/${key}.js"></script>`).join('\n') + `
+        ` + Object.keys(config.entry).map((key) => `<script src="http://localhost:3000/dist/${key}.js"></script>`).join('\n') + `
     </body>
 </html>`;
 

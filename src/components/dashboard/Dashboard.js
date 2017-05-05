@@ -9,9 +9,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="page-title"> Admin Dashboard
-                    <small>statistics, charts, recent events and reports</small>
-                </h1>
+                <h1 className="page-title"> Admin Dashboard</h1>
                 {
                     this.props.user.role === 'merchant' ? <MerchantDashboard />
                         : this.props.user.role === 'insurance' ? <InsuranceDashboard />

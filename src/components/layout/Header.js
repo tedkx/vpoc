@@ -1,5 +1,7 @@
 import React from 'react';
 
+import logo from '../../static/img/logo.png';
+
 class Header extends React.Component {
     render() {
         return (
@@ -7,7 +9,7 @@ class Header extends React.Component {
                 <div className="page-header-inner ">
                     <div className="page-logo">
                         <a href="http://keenthemes.com/preview/metronic/theme/admin_1/index.html">
-                            <img src="./MetronicAdminDashboard_files/logo.png" alt="logo" className="logo-default"/> 
+                            <img src={ logo } alt="logo" className="logo-default"/> 
                         </a>
                         <div className="menu-toggler sidebar-toggler">
                             <span></span>

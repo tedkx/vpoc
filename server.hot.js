@@ -11,7 +11,7 @@ const html = `<!DOCTYPE html>
         <title>Eurobank Key Management</title>
     </head>
 
-    <body>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
         <div id="app-wrap"></div>
 
         ` + Object.keys(config.entry).map((key) => `<script src="dist/${key}.js"></script>`).join('\n') + `

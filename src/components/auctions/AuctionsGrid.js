@@ -25,14 +25,14 @@ const TypeCellRenderer = (params) => {
 }
 const cellStyle = { padding: '7px' };
 
-class MyAuctionsGrid extends React.Component {
+class AuctionsGrid extends React.Component {
     constructor(props) {
         super(props);
 
         this._columnDefs = [
             { headerName: 'A/A', valueGetter: (params) => params.node.rowIndex + 1, width: 25, cellClass: 'text-center', cellStyle: cellStyle },
             { headerName: 'Part No', field: 'partnumber', width: 150, cellStyle: cellStyle },
-            { headerName: 'Τύπος', field: 'type', width: 150, cellRendererFramework: TypeCellRenderer, cellStyle: cellStyle },
+            { headerName: 'Τύπος', field: 'type', width: 60, cellRendererFramework: TypeCellRenderer, cellStyle: cellStyle },
             { headerName: 'Ποσότητα', field: 'quantity', width: 25, cellClass: ['text-center'], cellStyle: cellStyle },
             { headerName: 'Σύνολο', field: 'total', width: 35, cellClass: ['text-center'], cellStyle: cellStyle }
         ];
@@ -42,7 +42,7 @@ class MyAuctionsGrid extends React.Component {
         this.api = params.api;
         this.columnApi = params.columnApi;
 
-        GridHelper.baseOnGridReady(params, 10);
+        GridHelper.baseOnGridReady(params);
         
         if(Helper.isFunc(this.props.onGridReady))
             this.props.onGridReady(params);
@@ -71,4 +71,4 @@ class MyAuctionsGrid extends React.Component {
     }
 }
 
-export default MyAuctionsGrid;
+export default AuctionsGrid;

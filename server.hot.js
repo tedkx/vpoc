@@ -8,7 +8,7 @@ const path =    require('path'),
 const html = `<!DOCTYPE html>
 <html>
     <head>
-        <title>Eurobank Key Management</title>
+        <title>VDFM Project X</title>
     </head>
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">

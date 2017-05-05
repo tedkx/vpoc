@@ -21,6 +21,8 @@ class Auction extends React.Component {
                 }}/>
             );
         
+        let bidTypeCount = 
+        
         let portletActions = [
                 <div className="btn-group btn-group-devided" data-toggle="buttons" key="action-group-1">
                     <label className="btn btn-transparent green btn-outline btn-circle btn-sm active">
@@ -60,7 +62,7 @@ class Auction extends React.Component {
                 <div className="note note-info">
                     <p> Η δημοπρασία λήγει σε 5 ώρες </p>
                     <div className="progress progress-striped">
-                        <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={ { width: '75%', backgroundColor: '#36c6d3' } }>
+                        <div className="progress-bar progress-bar-success active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={ { width: '75%', backgroundColor: '#36c6d3' } }>
                             <span className="sr-only"> 75% Complete (success) </span>
                         </div>
                     </div>
@@ -69,6 +71,11 @@ class Auction extends React.Component {
                 <Portlet icon="icon-settings" title={ 'Part No ' +  this._auction.partnumber + ' | ' + this._auction.expires.toLocaleString() }
                     actions={ portletActions }
                     >
+                    <div>Tabs [Details] [History]</div>
+
+                    <div className="row">
+                        
+                    </div>
 
                 </Portlet>
             </div>

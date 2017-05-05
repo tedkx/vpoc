@@ -1,5 +1,6 @@
 import React from 'react';
 import { AgGridReact } from 'ag-grid-react'
+import { Modal }            from 'react-bootstrap';
 
 import Portlet from '../layout/Portlet'
 import Helper from '../../lib/Helper'
@@ -55,18 +56,40 @@ class AuctionsGrid extends React.Component {
 
     render() {
         return (
-            <Portlet title="Οι Δημοπρασιες μου" className="ag-blue ag-vdfm">
-                <AgGridReact
-                    onGridReady={ this.gridReady.bind(this) }
-                    onGridSizeChanged={ this.gridSizeChanged.bind(this) }
-                    
-                    columnDefs={ this._columnDefs }
-                    rowData={ this.props.data }
+            <div>
+                <Portlet title="Οι Δημοπρασιες μου" className="ag-blue ag-vdfm">
+                    <AgGridReact
+                        onGridReady={ this.gridReady.bind(this) }
+                        onGridSizeChanged={ this.gridSizeChanged.bind(this) }
+                        
+                        columnDefs={ this._columnDefs }
+                        rowData={ this.props.data }
 
-                    enableSorting={ true }
-                    rowHeight={ 36 }
-                    />
-            </Portlet>
+                        enableSorting={ true }
+                        rowHeight={ 36 }
+                        />
+                </Portlet>
+
+                <Modal animation={ true } className="fade-scale" show={ this.state.modalState !== ModalState.Hidden } onHide={ this.onModalClose } dialogClassName="custom-modal" style={ { top: '22%' } }>
+                    <Modal.Header closeButton>
+                        <Modal.Title><Translate value="approve" /></Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        {
+                            this.state.modalState == ModalState.Approve || this.state.modalState == ModalState.Reject
+                                ? <InfoForm schema={ modalFormModel } data={ this._approvalData } ref={(form) => { this.modalForm = form; }} />
+                            : this.state.modalState == ModalState.ApproveCancelation ? <Translate value="approve_cancelation_message" />
+                            : this.state.modalState == ModalState.RejectCancelation ? <Translate value="reject_cancelation_message" />
+                            : <div />
+                        }
+                        <div className="clear" />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <button type="button" className="btn btn-default pull-left" onClick={ this.onModalClose }><Translate value="close" /></button>
+                        <button type="button" className="btn btn-primary pull-right" onClick={ this.onModalSubmit }><Translate value="Save" /> <i className="fa fa-check-square-o" aria-hidden="true" /></button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
         );
     }
 }
